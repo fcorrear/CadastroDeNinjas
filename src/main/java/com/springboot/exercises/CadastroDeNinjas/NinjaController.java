@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class Controller {
+public class NinjaController {
 
     @GetMapping("/boasvindas") //no endpoint /boas vindas irá retornar o return desse método
     public String boasVindas(){
