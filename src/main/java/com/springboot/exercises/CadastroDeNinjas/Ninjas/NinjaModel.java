@@ -1,6 +1,9 @@
-package com.springboot.exercises.CadastroDeNinjas;
+package com.springboot.exercises.CadastroDeNinjas.Ninjas;
 
+import com.springboot.exercises.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity // Anotação que "transforma" essa classe em uma entidade do banco de dados
 @Table(name = "tb_cadastro")
@@ -13,6 +16,10 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+
+    @ManyToOne //Indica para o Spring que um ninja tem uma única missão
+    @JoinColumn(name = "id") //Foreign Key para acessar a tabela missões
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
